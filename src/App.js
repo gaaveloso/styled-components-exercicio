@@ -1,6 +1,8 @@
 import React from "react";
 import CardVideo from "./Componentes/CardVideo";
 import "./styles.css";
+import { GlobalStyled } from "./GlobalStyled";
+import {ContainerStyled, NavStyled, ListStyled, MainStyled, HeaderStyled} from "./AppStyled"
 
 export default function App() {
   const card1 = {
@@ -11,23 +13,24 @@ export default function App() {
 
   return (
     <div>
-      <div className="tela-inteira">
-        <header>
+      <ContainerStyled>
+        <GlobalStyled/>
+        <HeaderStyled>
           <h1>LabeTube</h1>
           <input type="text" placeholder="Busca" id="campoDeBusca" />
-        </header>
+        </HeaderStyled>
 
-        <main>
-          <nav className="menu-vertical">
-            <ul>
-              <li className="botoes-meunu-vertical">Início</li>
-              <li className="botoes-meunu-vertical">Em alta</li>
-              <li className="botoes-meunu-vertical">Inscrições</li>
+        <MainStyled>
+          <NavStyled>
+            <ListStyled>
+              <li>Início</li>
+              <li>Em alta</li>
+              <li>Inscrições</li>
               <hr />
-              <li className="botoes-meunu-vertical">Originais</li>
-              <li className="botoes-meunu-vertical">Histórico</li>
-            </ul>
-          </nav>
+              <li>Originais</li>
+              <li>Histórico</li>
+            </ListStyled>
+          </NavStyled>
 
           <section className="painel-de-videos">
             <CardVideo
@@ -36,12 +39,12 @@ export default function App() {
               textoAlternativo={card1.textoAlternativo}
             />
           </section>
-        </main>
+        </MainStyled>
 
         <footer>
           <h4>Oi! Eu moro no footer!</h4>
         </footer>
-      </div>
+      </ContainerStyled>
     </div>
   );
 }
